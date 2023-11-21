@@ -1,0 +1,53 @@
+{
+    "inbounds": [
+        {
+            "type": "hysteria2",
+            "listen": "::",
+            "listen_port": 8443,
+            "users": [
+                {
+                    "password": "ssds122sdsxsS1"
+                }
+            ],
+            "tls": {
+                "enabled": true,
+                "alpn": [
+                    "h3"
+                ],
+                "certificate_path": "/root/hysteria/cert.pem",
+                "key_path": "/root/hysteria/private.key"
+            }
+        },
+        {
+            "type": "vless",
+            "listen": "::",
+            "listen_port": 443,
+            "users": [
+                {
+                    "uuid": "d39b26f9-001e-4611-9d83-a59764a55732",
+                    "flow": "xtls-rprx-vision"
+                }
+            ],
+            "tls": {
+                "enabled": true,
+                "server_name": "www.lovelive-anime.jp", 
+                "reality": {
+                    "enabled": true,
+                    "handshake": {
+                        "server": "www.lovelive-anime.jp",
+                        "server_port": 443
+                    },
+                    "private_key": "aKA_r0R-ekzNDr1pwHq65stjVDEh-Zw6ekERXP4BtHI",
+                    "short_id": [
+                        "b2c86d5449d237fa"
+                    ]
+                }
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "type": "direct"
+        }
+    ]
+}
